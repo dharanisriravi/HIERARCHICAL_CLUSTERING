@@ -103,7 +103,7 @@ Tomato Soup,"tomato, onion, garlic, basil, cream"
 
 ## INPUT
    
-   ![input](image_1.png)
+   ![input](image-1.png)
 
 ## Add file
 
