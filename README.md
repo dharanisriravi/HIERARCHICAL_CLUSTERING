@@ -66,7 +66,7 @@ Lemon Herb Chicken,"chicken, lemon, garlic, thyme, olive oil"
 Veg Curry,"potato, peas, turmeric, cumin, coriander, chili"
 Mango Lassi,"mango, yogurt, sugar, cardamom"
 Tomato Soup,"tomato, onion, garlic, basil, cream"
- ---
+
 
 ## Installation & Setup
 
@@ -103,7 +103,7 @@ Tomato Soup,"tomato, onion, garlic, basil, cream"
 
 ## INPUT
    
-    ![alt text](image-1.png)
+    ![alt text](im.png)
 
 ## Add file
 
@@ -112,6 +112,8 @@ Tomato Soup,"tomato, onion, garlic, basil, cream"
 ## Output
 
     ![alt text](image-3.png)
+
+ ---
 
 ## Author
 
