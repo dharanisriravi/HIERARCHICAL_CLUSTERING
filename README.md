@@ -66,6 +66,7 @@ Lemon Herb Chicken,"chicken, lemon, garlic, thyme, olive oil"
 Veg Curry,"potato, peas, turmeric, cumin, coriander, chili"
 Mango Lassi,"mango, yogurt, sugar, cardamom"
 Tomato Soup,"tomato, onion, garlic, basil, cream"
+ ---
 
 ## Installation & Setup
 
