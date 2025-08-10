@@ -103,7 +103,7 @@ Tomato Soup,"tomato, onion, garlic, basil, cream"
 
 ## INPUT
    
-   ![input](im.png)
+   ![input](image_1.png)
 
 ## Add file
 
@@ -117,7 +117,7 @@ Tomato Soup,"tomato, onion, garlic, basil, cream"
 
 ## Author
 
-      R.DHARANI SRI
+R.DHARANI SRI
 
 ## Acknowledgments
 
