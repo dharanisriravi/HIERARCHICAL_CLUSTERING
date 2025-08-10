@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Flavor Clusters Result</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="page">
+    <div class="card">
+      <h1>Flavor Cluster Dendrogram</h1>
+      <p class="subtitle">File: {{ file_name }}</p>
+
+      <div class="image-wrap">
+        <img src="data:image/png;base64,{{ dendrogram_img }}" alt="Dendrogram">
+      </div>
+
+      <div class="actions">
+        <a href="{{ url_for('index') }}" class="btn">← Back</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

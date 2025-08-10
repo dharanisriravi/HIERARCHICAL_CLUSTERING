@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Food Recipe Flavor Clusters</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="page">
+    <div class="card">
+      <h1>Food Recipe Flavor Clusters</h1>
+      <p class="subtitle">Upload a CSV file that contains an <strong>ingredients</strong> column.
+         Optionally include a <strong>title</strong> or <strong>name</strong> column for labels.</p>
+
+      {% if error %}
+        <div class="error">{{ error }}</div>
+      {% endif %}
+
+      <form id="uploadForm" action="{{ url_for('cluster') }}" method="post" enctype="multipart/form-data">
+        <div id="dropzone" class="dropzone">
+          <div class="dz-text">Drag & drop CSV here or click to browse</div>
+          <input id="fileInput" name="file" type="file" accept=".csv" />
+        </div>
+
+        <div class="controls">
+          <button type="submit" class="btn">Generate Clusters</button>
+        </div>
+      </form>
+
+      <div id="hint" class="hint">
+        Sample CSV format:
+        <pre>title,ingredients
+Spicy Tomato Pasta,"tomato, garlic, chili, basil, olive oil"
+Lemon Chicken,"chicken, lemon, garlic, thyme"</pre>
+      </div>
+    </div>
+
+    <div id="loader" class="loader hidden">
+      <div class="spinner"></div>
+      <div>Generating dendrogram, please wait...</div>
+    </div>
+  </div>
+
+  <script>
+    const drop = document.getElementById('dropzone');
+    const fileInput = document.getElementById('fileInput');
+    const form = document.getElementById('uploadForm');
+    const loader = document.getElementById('loader');
+
+    drop.addEventListener('click', () => fileInput.click());
+
+    drop.addEventListener('dragover', (e) => {
+      e.preventDefault();
+      drop.classList.add('dragover');
+    });
+    drop.addEventListener('dragleave', () => {
+      drop.classList.remove('dragover');
+    });
+    drop.addEventListener('drop', (e) => {
+      e.preventDefault();
+      drop.classList.remove('dragover');
+      const f = e.dataTransfer.files[0];
+      if (f && f.name.toLowerCase().endsWith('.csv')) {
+        fileInput.files = e.dataTransfer.files;
+      } else {
+        alert('Please drop a CSV file.');
+      }
+    });
+
+    form.addEventListener('submit', (e) => {
+      if (fileInput.files.length === 0) {
+        e.preventDefault();
+        alert('Please select a CSV file first.');
+        return;
+      }
+      // show loader
+      loader.classList.remove('hidden');
+    });
+  </script>
+</body>
+</html>
